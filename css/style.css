@@ -1,9 +1,29 @@
+/* ------------------------------- ESTILOS AL CUERPO GENERAL DE LA PÁGINA -------------------------*/
+
+
+/* BACKGROUNG: Cambios al color de fondo de nuestra página.
+   MARGIN: Eliminamos el margen que tiene por defecto y lo poner en 0.
+   COLOR: Cambiamos el color de nuestra fuente.
+   FONT-FAMILY: Escogemos un tipo de letra previamente agregara en el HTML.
+*/
+
 body {
     background: rgba(0, 0, 0, .9);
     margin: 0;
     color: #ffff;
     font-family: 'Roboto', sans-serif;
 }
+
+
+/* ------------------------------------- ESTILOS AL HEADER (EFECTO) ----------------------------*/
+
+
+/* 
+    AGREGAMOS EL '::AFTER' PARA PODER COLOCAR NUESTRA IMAGEN DESPUES DE QUE INICIALIZAMOS
+    NUESTRA CLASE .HEADER, A DEMÁS AQUÍ DENTRO AGREGAMOS LA IMAGEN DE MANERA ESTATICA.
+    EL EFECTO LO MANEJAMOS CON LA PROPIEDAD 'FILTER' QUE NOS DIFUMINA LA IMAGEN.
+    TRANSITION LO MANEJAMOS PARA QUE HAGA UN EFECTO EN EL QUE NO SE VEA DE GOLPE EL CAMBIO.
+*/
 
 .header::after {
     content: '';
@@ -19,6 +39,11 @@ body {
     transition: all 1000ms;
 }
 
+
+/* MANEJAMOS DOS HOVER: UNA PARA EL FONDO Y OTRA PARA EL TITULO Y LAS IMAGENES DEL HEADER.
+   EL HOVER LO MANEJAMOS PARA CUANDO EL APUNTADOR ESTA SOBRE NUESTRO ELEMENTO EN ESTE CASO
+   NUESTROS ELEMENTOS QUE TIENEN LA CLASE .HEADER*/
+
 .header:hover .header-content {
     filter: blur(2px);
     -webkit-filter: blur(2px);
@@ -28,6 +53,17 @@ body {
     filter: blur(0px);
     -webkit-filter: blur(0px);
 }
+
+
+/* ----------------------------------- ESTILOS AL HEADER (CONTENIDO) -------------------------*/
+
+
+/* Estilos al contenido que tenemos dentro de la clase '.header-content' que en el caso HTML
+   se encuentra dentro del div en donde colocamos el contenido de nuestro header.
+   Se agregan estilos para acomodar la posicion de nuestra caja de contenido ulilizando
+   y centrando nuestro texto dentro de ella con: position, z-index, top, left, margin-top, 
+   margin-left, text-align, width, height.
+   Tambien agregamos un transition para el efecto antes mencionado.*/
 
 .header-content {
     position: absolute;
@@ -42,20 +78,50 @@ body {
     transition: all 1000ms;
 }
 
+
+/* -------------------------------------- ESTILOS AL HEADER (IMAGEN) ------------------------------*/
+
+
+/* Cambiamos el tamaño de la imagen del logo con
+   WIDTH: Ancho de mi imagen.
+   HEIGHT: Alto de mi imagen. */
+
 .header-content .logo {
     width: 200px;
     height: 250px;
 }
+
+
+/* --------------------------------- ESTILOS A LOS TITULOS  ------------------------------------*/
+
+
+/* Manejamos diferentes titulos en HTML y lo generalizamos con una clase llamada .title 
+   Cambiamos el tipo y el tamaño de letra solamente.*/
 
 .title {
     font-family: 'Oswald', sans-serif;
     font-size: 2.5rem;
 }
 
+
+/* --------------------------------- ESTILOS A LOS TEXTOS   ------------------------------------*/
+
+
+/* Manejamos diferentes textos en HTML y lo generalizamos con una clase llamada .text 
+   Cambiamos el tamaño de letra solamente y su margen superior.*/
+
 .text {
     line-height: 1.7;
     margin-top: 1rem;
 }
+
+
+/* ----------------- ESTILOS A NUESTRO CONTENEDOR (.container)  ------------------------------------*/
+
+
+/* Manejamos diferentes contenedores (divs) con la clase .container en HTML.
+   Dentro de este contenedor se encontrara el link a la práctica correspondiente.
+*/
 
 .container {
     width: 960px;
@@ -64,15 +130,31 @@ body {
     padding: 4rem 1rem;
 }
 
+
+/* -------------------------------- COLUMNAS DEL CONTAINER ------------------------------------------*/
+
+
+/* Dentro del contenedor lo dividimos en columnas utilizando la tecnología de Grid
+   Elegimos en numero de columnas  con 'grid-tempaple-columns' y en este caso solo son 2.
+*/
+
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
 }
 
+
+/* Clase generalizada para cuando queramos centrar un texto -*/
+
 .text-center {
     text-align: center;
 }
+
+
+/* Manejamos dos tipos de colores principales en nuestros contenedores, uno oscuro y uno claro
+   y los utlizamos cuando los necesitemos con las clases 'bg-light' para el claro y 'bg-dark'
+   para uno oscuro, solamente se invierten los colores del fondo y los colores de la letra. -*/
 
 .bg-light {
     background: white;
@@ -83,6 +165,9 @@ body {
     background: #2f3542;
     color: white;
 }
+
+
+/* Estilo a nuestro footer para ajustar el contenido colocandole una medida al padding y quitandole el margen.*/
 
 footer {
     padding: 2rem;
