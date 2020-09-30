@@ -55,6 +55,38 @@ body {
 }
 
 
+/* ------------------------------------- ESTILOS AL HEADER DE PRACTICAS (EFECTO) ----------------------------*/
+
+.header-practicas::after {
+    content: '';
+    height: 50vh;
+    width: 100%;
+    background-image: url(../img/php1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+}
+
+
+/* MANEJAMOS DOS HOVER: UNA PARA EL FONDO Y OTRA PARA EL TITULO Y LAS IMAGENES DEL HEADER.
+   EL HOVER LO MANEJAMOS PARA CUANDO EL APUNTADOR ESTA SOBRE NUESTRO ELEMENTO EN ESTE CASO
+   NUESTROS ELEMENTOS QUE TIENEN LA CLASE .HEADER*/
+
+.header-practicas:hover .header-content {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.header-practicas:hover::after {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+
 /* ----------------------------------- ESTILOS AL HEADER (CONTENIDO) -------------------------*/
 
 
@@ -138,10 +170,32 @@ body {
    Elegimos en numero de columnas  con 'grid-tempaple-columns' y en este caso solo son 2.
 */
 
+.grid-1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 40px;
+}
+
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+}
+
+
+/*-----------------------Hipervinculos---------------------------------*/
+
+a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25pt;
+    outline: none;
+    text-decoration: none;
+    color: #f1ffe8;
+}
+
+a:hover {
+    color: rgb(192, 241, 225);
+    font-size: 28pt;
 }
 
 
